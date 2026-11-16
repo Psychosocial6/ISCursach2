@@ -1,0 +1,21 @@
+CREATE INDEX idx_tournaments_status ON tournaments(status);
+CREATE INDEX idx_tournaments_start_date ON tournaments(start_date);
+CREATE INDEX idx_matches_tournament_id ON matches(tournament_id);
+CREATE INDEX idx_matches_participant1 ON matches(participant1);
+CREATE INDEX idx_matches_participant2 ON matches(participant2);
+CREATE INDEX idx_matches_winner_id ON matches(winner_id);
+CREATE INDEX idx_matches_winner_next_match ON matches(winner_next_match_id);
+CREATE INDEX idx_match_games_winner_id ON match_games(winner_id);
+CREATE INDEX idx_tournaments_admin_id ON tournaments(admin_id);
+CREATE INDEX idx_match_games_match_id ON match_games(match_id);
+CREATE INDEX idx_tournaments_sport_id ON tournaments(sport_id);
+CREATE INDEX idx_tournament_results_tournament_id ON tournament_results(tournament_id);
+CREATE INDEX idx_tournament_results_participant_id ON tournament_results(participant_id);
+CREATE INDEX idx_tournament_applications_tournament_id ON tournament_applications(tournament_id);
+CREATE INDEX idx_tournament_applications_user_id ON tournament_applications(user_id);
+CREATE INDEX idx_team_members_user_id ON team_members(user_id);
+CREATE INDEX idx_team_members_team_id ON team_members(team_id);
+CREATE INDEX idx_match_protocols_created_by ON match_protocols(created_by);
+CREATE INDEX idx_tournaments_sport_status ON tournaments(sport_id, status);
+
+CREATE INDEX idx_password_reset_tokens_user_id_hash ON password_reset_tokens USING hash (user_id);
