@@ -97,14 +97,14 @@ ROLLBACK;
 
 
 -- 10
-EXPLAIN (ANALYZE, BUFFERS) 
+EXPLAIN (ANALYZE, BUFFERS)
 SELECT * FROM tournaments WHERE sport_id = 12;
 BEGIN;
   DROP INDEX idx_tournaments_sport_id;
-  EXPLAIN (ANALYZE, BUFFERS) 
+  DROP INDEX idx_tournaments_sport_status;
+  EXPLAIN (ANALYZE, BUFFERS)
   SELECT * FROM tournaments WHERE sport_id = 12;
 ROLLBACK;
-
 
 -- 11
 EXPLAIN (ANALYZE, BUFFERS) 
